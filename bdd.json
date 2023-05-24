@@ -2,6 +2,22 @@
  "users":[{
     "id" : 0,
     "email" : "user@user.com",
-    "password" :" Unpassword"
- }]
+    "password" :"Unpassword"
+ },
+ {
+   "id" : 1,
+    "email" : "jaques@user.com",
+    "password" :"1234567"
+ },
+ {
+   "id" : 2,
+    "email" : "sylvie@user.com",
+    "password" :"azerty"
+ },
+ {
+   "id" : 3,
+    "email" : "pierre@user.com",
+    "password" :"zutalors"
+ }
+]
 }
