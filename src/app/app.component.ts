@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { FormulaireServices } from './formulaire.services';
+import { USERS } from './users';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +10,16 @@ import { FormulaireServices } from './formulaire.services';
 export class AppComponent {
   
   title = 'formulaire';
-  usersList;
   userPassword : string = '';
   userEmail : string = '';
+  url = 'http://localhost:3000/users';
+  usersList: Array<USERS> = [];
   
-  constructor(private formulaireService : FormulaireServices){
-    this.usersList = this.formulaireService.getAllUsers();
-    console.log("UsersList", this.usersList)
+  constructor() {
+    fetch(this.url).then(res => res.json()).then( resJson => {
+      this.usersList = resJson;
+      console.log(this.usersList);
+    });
   }
 
   onSubmitForm(form : NgForm){
