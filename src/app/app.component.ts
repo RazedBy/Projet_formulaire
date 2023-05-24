@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { FormulaireServices } from './formulaire.services';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,12 +10,23 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
   
   title = 'formulaire';
-  url = 'http://localhost:3000/users';
-
+  usersList;
+  userPassword : string = '';
   userEmail : string = '';
-  userPassword : string =  '';
+  
+  constructor(private formulaireService : FormulaireServices){
+    this.usersList = this.formulaireService.getAllUsers();
+    console.log("UsersList", this.usersList)
+  }
 
   onSubmitForm(form : NgForm){
-    console.log(form.value);
+    /*for(var user of this.usersList){
+      console.log(user);
+      if(form.value.userPassword == user.password && form.value.userEmail == user.email){
+        console.log("Yes")
+      }else{
+        console.log("Non");
+      }
+    }*/
   }
 }
