@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { USERS } from './users';
+import { MatDialog } from  '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',

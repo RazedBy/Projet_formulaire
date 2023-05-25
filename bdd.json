@@ -1,23 +1,31 @@
 {
  "users":[{
     "id" : 0,
+    "name" : "Léo",
     "email" : "user@user.com",
-    "password" :"Unpassword"
+    "password" :"Unpassword",
+    "description" : "Un utilsateur du site internet inscrit depuis 5 ans"
  },
  {
    "id" : 1,
+   "name" : "Jaques",
     "email" : "jaques@user.com",
-    "password" :"1234567"
+    "password" :"1234567",
+    "description" : "Un utilsateur du site internet inscrit depuis 10 ans"
  },
  {
    "id" : 2,
+   "name" : "Sylvie",
     "email" : "sylvie@user.com",
-    "password" :"azerty"
+    "password" :"azerty",
+    "description" : "Un utilsateur du site internet inscrit depuis 9 mois"
  },
  {
    "id" : 3,
+   "name" : "Pierre",
     "email" : "pierre@user.com",
-    "password" :"zutalors"
+    "password" :"zutalors",
+    "description" : "Un utilsateur du site internet inscrit depuis 3 ans"
  }
 ]
 }

@@ -11,7 +11,7 @@ export class DashboardComponent {
 
   url = 'http://localhost:3000/users';
   usersList: Array<USERS> = [];
-  user : USERS = {id : NaN, email : '', password : ''};
+  user : USERS = {id : NaN, email : '', password : '', name : '', description : ''};
   constructor(private router: Router) {
 
     //Récupérations des données de la bdd.json

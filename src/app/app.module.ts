@@ -9,17 +9,23 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { UserListComponent } from './user-list/user-list.component';
 
+import { MatDialogModule } from '@angular/material/dialog';
+import { UserCardsComponent } from './user-cards/user-cards.component';
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     LoginComponent,
-    UserListComponent
+    UserListComponent,
+    UserCardsComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
     
   ],
   providers: [],
