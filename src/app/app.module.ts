@@ -18,8 +18,6 @@ import { UserCardsComponent } from './user-cards/user-cards.component';
     LoginComponent,
     UserListComponent,
     UserCardsComponent,
-    
-    
   ],
   imports: [
     BrowserModule,

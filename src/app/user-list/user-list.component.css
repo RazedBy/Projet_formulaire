@@ -1,9 +1,5 @@
-.flex{
+.box{
     display: flex;
     flex-direction: row;
-}
-
-.box{
     margin-right: 20px;
-
 }

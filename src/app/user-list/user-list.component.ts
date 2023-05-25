@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { USERS } from '../users';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ModalComponent } from '../modal/modal.component';
+import { MatDialog } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
