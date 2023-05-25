@@ -33,7 +33,7 @@ export class UserCardsComponent {
     this.email = user['email'];
     this.password = user['password'];
     this.description = user['description'];
-    const modalDialog = this.matDialog.open(ModalComponent, {
+    this.matDialog.open(ModalComponent, {
       data: {
         id : user['id'], 
         name : user['name'],
