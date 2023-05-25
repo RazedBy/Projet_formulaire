@@ -11,6 +11,8 @@ import { UserListComponent } from './user-list/user-list.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { UserCardsComponent } from './user-cards/user-cards.component';
+import { ModalAddUserComponent } from './modal-add-user/modal-add-user.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,12 +20,15 @@ import { UserCardsComponent } from './user-cards/user-cards.component';
     LoginComponent,
     UserListComponent,
     UserCardsComponent,
+    ModalAddUserComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule,
     
   ],
   providers: [],

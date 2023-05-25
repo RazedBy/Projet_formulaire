@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ModalAddUserComponent } from '../modal-add-user/modal-add-user.component';
 import { USERS } from '../users';
 
 @Component({
@@ -16,7 +18,7 @@ export class LoginComponent {
   url = 'http://localhost:3000/users';
   usersList: Array<USERS> = [];
   
-  constructor(private router : Router) {
+  constructor(private router : Router,public matDialog: MatDialog) {
     fetch(this.url).then(res => res.json()).then( resJson => {
       this.usersList = resJson;
       this.usersList.forEach(element => {
@@ -29,7 +31,6 @@ export class LoginComponent {
 
   onSubmitForm(form : NgForm){
     for(var user of this.usersList){
-      //console.log(user);
       if(form.value.userPassword == user.password && form.value.userEmail == user.email){
         console.log(sessionStorage.setItem("id",user.id.toString()))
         let userId = user.id.toString();
@@ -41,5 +42,15 @@ export class LoginComponent {
 
   userList(){
     this.router.navigate(['/userList']);
+  }
+
+  openModal() {
+    this.matDialog.open(ModalAddUserComponent, {
+      width: "400px",
+      position: { left: "500px", top: "-90px" },
+      height: "400px",
+      id: "modal-component",
+      disableClose: true
+    });
   }
 }

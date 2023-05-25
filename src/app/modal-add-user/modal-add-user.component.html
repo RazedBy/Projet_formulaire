@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h5{
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        color: #023047;
+    }
+    input{
+        margin-bottom: 10px;
+        margin-left: 5px;
+    }
+    label{
+        margin-left: 15px;
+    }
+    button{
+        margin-left: 150px;
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <h5>Add a user</h5>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" action="">
+        <label for="addId">Id : </label>
+        <input name="id" type="number" placeholder="ex : 0" [(ngModel)] ='id' value="5">
+        <br>
+        <label for="addName">Name :</label>
+        <input name="name" type="text" placeholder="ex : Joshua" [(ngModel)]="name" value="Joshua">
+        <br>
+        <label for="addEmail">E-mail :</label>
+        <input name="email" type="email" placeholder="ex : example@example.com" [(ngModel)]="email" value="joshua@user.com">
+        <br>
+        <label for="addPassword">Password :</label>
+        <input name="password" type="password" placeholder="ex : APassword"[(ngModel)]="password" value="JoshuaBg">
+        <br>
+        <label for="addDescription">Description :</label>
+        <input name="description" type="text" placeholder="ex : Log-in since 2019" [(ngModel)]="description" value="Inscrit depuis 3 ans">
+        <button class="btn btn-success" type="submit">Ajouter</button>
+    </form>
+</body>
+</html>
