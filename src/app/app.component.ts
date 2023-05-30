@@ -12,7 +12,7 @@ import { MatDialog } from  '@angular/material/dialog';
 
 export class AppComponent {
 
-  url = 'http://localhost:3000/users';
+  url = 'http://localhost:3000/userList';
   usersList: Array<USERS> = [];
 
   constructor(private router : Router) {

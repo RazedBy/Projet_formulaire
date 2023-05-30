@@ -9,7 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class UserListComponent {
   usersList: Array<USERS> = [];
-  url = "http://localhost:3000/users";
+  url = "http://localhost:3000/userList";
   constructor(public matDialog: MatDialog) {
     fetch(this.url).then(res => res.json()).then(resJson => {
       this.usersList = resJson;

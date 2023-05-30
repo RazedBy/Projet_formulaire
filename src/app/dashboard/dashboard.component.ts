@@ -9,7 +9,7 @@ import { USERS } from '../users';
 })
 export class DashboardComponent {
 
-  url = 'http://localhost:3000/users';
+  url = 'http://localhost:3000/userList';
   usersList: Array<USERS> = [];
   user : USERS = {id : NaN, email : '', password : '', name : '', description : ''};
   constructor(private router: Router) {

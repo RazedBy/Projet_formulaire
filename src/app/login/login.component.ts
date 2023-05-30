@@ -15,7 +15,7 @@ export class LoginComponent {
   title = 'formulaire';
   userPassword : string = '';
   userEmail : string = '';
-  url = 'http://localhost:3000/users';
+  url = 'http://localhost:3000/userList';
   usersList: Array<USERS> = [];
   
   constructor(private router : Router,public matDialog: MatDialog) {
@@ -44,13 +44,14 @@ export class LoginComponent {
     this.router.navigate(['/userList']);
   }
 
-  openModal() {
-    this.matDialog.open(ModalAddUserComponent, {
-      width: "400px",
-      position: { left: "500px", top: "-90px" },
-      height: "400px",
-      id: "modal-component",
-      disableClose: true
-    });
+  addUser() {
+    this.router.navigate(['/addUser'])
+    // this.matDialog.open(ModalAddUserComponent, {
+    //   width: "400px",
+    //   position: { left: "500px", top: "-90px" },
+    //   height: "400px",
+    //   id: "modal-component",
+    //   disableClose: true
+    // });
   }
 }

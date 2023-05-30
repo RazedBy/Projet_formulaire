@@ -14,7 +14,7 @@ import { EditModalComponent } from '../edit-modal/edit-modal.component';
 export class ModalComponent {
 	usersList : Array<USERS> = [];
 	user= {};
-	url = "http://localhost:3000/users"
+	url = "http://localhost:3000/userList"
 	id : any;
 	name : any;
 	email : any;
@@ -52,7 +52,7 @@ export class ModalComponent {
 		  });
 	}
 
-	openEditModal(){
+	/*openEditModal(){
 		this.id = user['id'];
 		this.name = user['name'];
 		this.email = user['email'];
@@ -72,6 +72,6 @@ export class ModalComponent {
 			id: "modal-edit",
 			disableClose: true
 		})
-	}
+	}*/
 		
 }

@@ -15,6 +15,7 @@ import { ModalAddUserComponent } from './modal-add-user/modal-add-user.component
 import { HttpClientModule } from '@angular/common/http';
 import { CloseModalComponent } from './close-modal/close-modal.component';
 import { EditModalComponent } from './edit-modal/edit-modal.component';
+import { AddUserComponent } from './add-user/add-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { EditModalComponent } from './edit-modal/edit-modal.component';
     ModalAddUserComponent,
     CloseModalComponent,
     EditModalComponent,
+    AddUserComponent,
     
   ],
   imports: [

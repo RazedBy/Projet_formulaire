@@ -11,7 +11,7 @@ import { USERS } from '../users';
 export class UserCardsComponent {
   @Input() user !: USERS;
   usersList: Array<USERS> = [];
-  url = "http://localhost:3000/users";
+  url = "http://localhost:3000/userList";
   id: any;
   name: any;
   email: any;
@@ -29,14 +29,14 @@ export class UserCardsComponent {
 
   openModal(user: any) {
     this.id = user['id'];
-    this.name = user['name'];
+    this.name = user['nom'];
     this.email = user['email'];
     this.password = user['password'];
     this.description = user['description'];
     this.matDialog.open(ModalComponent, {
       data: {
         id : user['id'], 
-        name : user['name'],
+        name : user['nom'],
         email : user['email'],
         password : user['password'],
         description : user['description']
