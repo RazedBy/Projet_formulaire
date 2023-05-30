@@ -1,7 +1,8 @@
 import { Component, Inject, Input, Optional } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { USERS } from '../users';
-import { UserListComponent } from '../user-list/user-list.component';
+import { CloseModalComponent } from '../close-modal/close-modal.component';
+import { EditModalComponent } from '../edit-modal/edit-modal.component';
 @Component({
 	selector: 'ngbd-modal-basic',
 	standalone: true,
@@ -41,4 +42,36 @@ export class ModalComponent {
 	closeModal(){
 		this.MatDialog.closeAll()
 	}
+	openDeleteModal(){
+		this.MatDialog.open(CloseModalComponent, {
+			width: "600px",
+			position: { left: "425px", top: "-250px" },
+			height: "200px",
+			id: "modal-delete",
+			disableClose: true
+		  });
+	}
+
+	openEditModal(){
+		this.id = user['id'];
+		this.name = user['name'];
+		this.email = user['email'];
+		this.password = user['password'];
+		this.description = user['description'];
+		this.MatDialog.open(EditModalComponent,{
+			data: {
+				id : this.id, 
+				name : this.name,
+				email : this.email,
+				password : this.password,
+				description : this.description
+			  },
+			width: "400px",
+			position: { left: "500px", top: "-400px" },
+			height: "400px",
+			id: "modal-edit",
+			disableClose: true
+		})
+	}
+		
 }

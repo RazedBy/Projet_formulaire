@@ -1,0 +1,50 @@
+<style>
+    h5{
+        text-align: center;
+    }
+    .flex{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .flex button{
+        margin-left: 70px;
+        margin-top: 15px;
+    }
+</style>
+
+<h5>Edit a user</h5>
+    <form #userForm="ngForm" action="">
+        <div class="flex">
+            <label for="addId">Id : </label>
+        <input name="id" type="number" placeholder="ex : 0"  value="5">
+        </div>
+        <br>
+        <div class="flex">
+
+        <label for="addName">Name :</label>
+        <input name="name" type="text" placeholder="ex : Joshua"  value="Joshua">
+        </div>
+        <br>
+        <div class="flex">
+        <label for="addEmail">E-mail :</label>
+        <input name="email" type="email" placeholder="ex : example@example.com" value="joshua@user.com">
+        </div>
+        <br>
+        <div class="flex">
+        <label for="addPassword">Password :</label>
+        <input name="password" type="password" placeholder="ex : APassword" value="">
+         </div>  
+        <br>
+        <div class="flex">
+        <label for="addDescription">Description :</label>
+        <input name="description" type="text" placeholder="ex : Log-in since 2019" value="">
+        </div>
+        <div class="flex">
+            <button class="btn btn-success" type="submit">Ajouter</button>
+            <button class="btn btn-danger" >Close</button>
+        
+
+        </div>
+        
+    </form>

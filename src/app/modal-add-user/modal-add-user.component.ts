@@ -3,6 +3,9 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { USERS } from '../users';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
+
 @Component({
   selector: 'app-modal-add-user',
   templateUrl: './modal-add-user.component.html',
@@ -23,7 +26,7 @@ export class ModalAddUserComponent {
     };
 
     constructor(
-      private http : HttpClient){
+      private http : HttpClient, private MatDialog : MatDialog, public dialogRef : MatDialogRef<ModalComponent>){
         
     }
 
@@ -38,6 +41,10 @@ export class ModalAddUserComponent {
     }
     console.log(this.newUser)
       return this.http.post<USERS>(this.url, this.newUser,this.httpOptions)       
+    }
+
+    onClose(){
+        this.MatDialog.closeAll();
     }
 
 

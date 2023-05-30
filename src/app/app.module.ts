@@ -13,6 +13,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { UserCardsComponent } from './user-cards/user-cards.component';
 import { ModalAddUserComponent } from './modal-add-user/modal-add-user.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CloseModalComponent } from './close-modal/close-modal.component';
+import { EditModalComponent } from './edit-modal/edit-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     UserListComponent,
     UserCardsComponent,
     ModalAddUserComponent,
+    CloseModalComponent,
+    EditModalComponent,
     
   ],
   imports: [
