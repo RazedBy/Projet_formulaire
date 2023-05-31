@@ -53,8 +53,9 @@ app.get('/userList/:userID',(req,res) => {
 app.put('/userList/:userID',(req,res) => {
     const id = Number(req.params.userID)
     const user = db.query(`SELECT * FROM users WHERE id ='${id}'`)
+    console.log(req.body.nom,req.body.email,req.body.password,req.body.description)
     if(user){
-        db.query(`UPDATE users SET nom = ${req.body.nom}, email = ${req.body.email}, password = ${req.body.password}, description = ${req.body.description} WHERE id = ${id} `)
+        db.query(`UPDATE users SET nom = '${req.body.name}', email = '${req.body.email}', password = '${req.body.password}', description = '${req.body.description}' WHERE id = ${id} `)
         return res.status(200).send('User Up-to-date !')
     }else{
         return res.status(404).send('User not found');

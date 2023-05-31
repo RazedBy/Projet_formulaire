@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import { USERS } from '../users';
 import { NgForm } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 

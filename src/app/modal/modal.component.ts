@@ -1,4 +1,4 @@
-import { Component, Inject, Input, Optional } from '@angular/core';
+import { Component, Inject, Injectable, Input, Optional } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { USERS } from '../users';
 import { CloseModalComponent } from '../close-modal/close-modal.component';
@@ -9,7 +9,6 @@ import { EditModalComponent } from '../edit-modal/edit-modal.component';
 	imports:[],
 	templateUrl: './modal.component.html',
 })
-
 
 export class ModalComponent {
 	usersList : Array<USERS> = [];
@@ -22,14 +21,6 @@ export class ModalComponent {
 	description : any;
 
 	constructor(private MatDialog : MatDialog, public dialogRef : MatDialogRef<ModalComponent>, @Optional() @Inject(MAT_DIALOG_DATA) public data: any){
-		fetch(this.url).then(res => res.json()).then( resJson => {
-			this.usersList = resJson;
-			this.usersList.forEach(element => {
-			  element.email = element.email.toString();
-			  element.password = element.password.toString();
-			});
-		  });
-
 		  this.id = data.id;
 		  this.name = data.name;
 		  this.email = data.email;
@@ -44,6 +35,9 @@ export class ModalComponent {
 	}
 	openDeleteModal(){
 		this.MatDialog.open(CloseModalComponent, {
+			data: {
+				id : this.id, 
+			},
 			width: "600px",
 			position: { left: "425px", top: "-250px" },
 			height: "200px",
@@ -52,12 +46,7 @@ export class ModalComponent {
 		  });
 	}
 
-	/*openEditModal(){
-		this.id = user['id'];
-		this.name = user['name'];
-		this.email = user['email'];
-		this.password = user['password'];
-		this.description = user['description'];
+	openEditModal(){
 		this.MatDialog.open(EditModalComponent,{
 			data: {
 				id : this.id, 
@@ -72,6 +61,7 @@ export class ModalComponent {
 			id: "modal-edit",
 			disableClose: true
 		})
-	}*/
-		
+	}
+
+
 }

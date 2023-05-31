@@ -1,6 +1,9 @@
 <style>
     h5{
         text-align: center;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        margin-top: 10px;
     }
     .flex{
         display: flex;
@@ -11,40 +14,46 @@
         margin-left: 70px;
         margin-top: 15px;
     }
+    label{
+        text-transform: uppercase;
+        margin-left: 10px;
+    }
+
+    .button{
+        margin-left: 25px;
+        margin-top: 20px;
+    }
 </style>
 
 <h5>Edit a user</h5>
-    <form #userForm="ngForm" action="">
-        <div class="flex">
-            <label for="addId">Id : </label>
-        <input name="id" type="number" placeholder="ex : 0"  value="5">
-        </div>
-        <br>
+    <form #editForm="ngForm" (ngSubmit)="onSubmitForm(editForm)" action="">
+
         <div class="flex">
 
-        <label for="addName">Name :</label>
-        <input name="name" type="text" placeholder="ex : Joshua"  value="Joshua">
+        <label for="addName">name :</label>
+        <input name="name" type="text" placeholder="ex : Joshua"  value="{{name}}" style="margin-left:83px ;" [(ngModel)]="name">
         </div>
         <br>
         <div class="flex">
         <label for="addEmail">E-mail :</label>
-        <input name="email" type="email" placeholder="ex : example@example.com" value="joshua@user.com">
+        <input name="email" type="email" placeholder="ex : example@example.com" value="{{email}}" style="margin-left:75px ;" [(ngModel)]="email">
         </div>
         <br>
         <div class="flex">
         <label for="addPassword">Password :</label>
-        <input name="password" type="password" placeholder="ex : APassword" value="">
+        <input name="password" type="password" placeholder="ex : APassword" value="{{password}}" style="margin-left:43px ;" [(ngModel)]="password">
          </div>  
         <br>
         <div class="flex">
         <label for="addDescription">Description :</label>
-        <input name="description" type="text" placeholder="ex : Log-in since 2019" value="">
+        <input name="description" type="text" placeholder="ex : Log-in since 2019" value="{{description}}"style="margin-left:25px ;" [(ngModel)]="description">
         </div>
-        <div class="flex">
-            <button class="btn btn-success" type="submit">Ajouter</button>
-            <button class="btn btn-danger" >Close</button>
+        <div class="button">
+            <div class="flex">
+                <button class="btn btn-success" type="submit">Modifier</button>
+                <button class="btn btn-danger" (click)="onClose()">Close</button>
+            </div>
+        </div>
         
-
-        </div>
         
     </form>

@@ -17,6 +17,7 @@ export class UserCardsComponent {
   email: any;
   password: any;
   description: any;
+  ValeurFils : boolean = false;
   constructor(public matDialog: MatDialog) {
     fetch(this.url).then(res => res.json()).then(resJson => {
       this.usersList = resJson;
@@ -47,5 +48,8 @@ export class UserCardsComponent {
       id: "modal-component",
       disableClose: true
     });
+
+      
+    
   }
 }
