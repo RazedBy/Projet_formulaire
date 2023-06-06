@@ -13,7 +13,7 @@ import { EditModalComponent } from '../edit-modal/edit-modal.component';
 export class ModalComponent {
 	usersList : Array<USERS> = [];
 	user= {};
-	url = "http://localhost:3000/userList"
+	url = "http://localhost:8000/api/users"
 	id : any;
 	name : any;
 	email : any;

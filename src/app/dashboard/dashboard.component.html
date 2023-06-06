@@ -7,11 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>DASHBOARD OF {{user.email}}</h1>
+    <h1>DASHBOARD OF {{user.name}}</h1>
     <p>Votre id est : {{user.id}}</p>
-    <p>Votre password est : <b> {{user.password}} </b></p>
     <p>Votre prénom est : {{user.name}}</p>
-
+    <p>Votre description est : <b> {{user.description}} </b></p>
     <button (click)="loggout()">Deconnexion</button>
 </body>
 </html>

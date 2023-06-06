@@ -18,7 +18,7 @@ export class ModalAddUserComponent {
     password : string = 'JoshuaBg';
     description : string = 'Inscrit depuis 3 ans';
     newUser : USERS ={id : NaN, name : '',email : '',password : '',description : ''};
-    url = "http://localhost:3000/userList";
+    url = "http://localhost:8000/api/users";
     httpOptions = {
       headers : new HttpHeaders({
         'Content-Type' : 'application/json'
@@ -33,14 +33,16 @@ export class ModalAddUserComponent {
     
     onSubmit(form : NgForm) : Observable<USERS>{
       this.newUser = {
-        "id" : form.value.id,
+        "id" : NaN,
         "name" : form.value.name,
         "email" : form.value.email,
         "password" : form.value.password,
         "description" :form.value.description
     }
-    console.log(this.newUser)
-      return this.http.post<USERS>(this.url, this.newUser,this.httpOptions)       
+
+    
+      console.log(this.newUser)
+      return this.http.post<USERS>(this.url,this.newUser,this.httpOptions)       
     }
 
     onClose(){

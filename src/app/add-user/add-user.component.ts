@@ -15,7 +15,7 @@ export class AddUserComponent {
     password : string = '';
     description : string = '';
     newUser = { name : '',email : '',password : '',description : ''};
-    url = "http://localhost:3000/addUser";
+    url = "http://localhost:8000/api/users";
     httpOptions = {
       headers : new HttpHeaders({
         'Content-Type' : 'application/json'

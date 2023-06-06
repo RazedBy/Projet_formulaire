@@ -28,7 +28,7 @@ export class CloseModalComponent {
     this.email = data.email;
     this.password = data.password;
     this.description = data.description;
-    this.url = "http://localhost:3000/userList/"+data.id
+    this.url = "http://localhost:8000/api/users/"+data.id
   }
 
   onNo(){
