@@ -42,7 +42,7 @@ export class LoginComponent {
       this.token = data.token;
       this.decrypt= jwt_decode(this.token)
       sessionStorage.setItem("token",this.token)
-      this.router.navigate(['/dashboard/'+this.decrypt.id])
+      this.router.navigate(['/dashboard'])
     });    
   }
 

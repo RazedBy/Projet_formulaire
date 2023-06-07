@@ -4,6 +4,13 @@ import { Router, RouterLink } from '@angular/router';
 import { USERS } from './users';
 import { MatDialog } from  '@angular/material/dialog';
 import jwt_decode from 'jwt-decode';
+import { InjectionToken, NgModule } from "@angular/core";
+
+export const JWT_OPTIONS = new InjectionToken('JWT_OPTIONS');
+
+const jwtOptions = {
+  // Options de configuration JWT
+};
 
 
 @Component({
@@ -23,7 +30,7 @@ export class AppComponent {
       if (token !== null) {
       const decode : any = jwt_decode(token);
       console.log(decode)
-      this.router.navigate(['/dashboard/'+decode.id]);
+      this.router.navigate(['/dashboard']);
       }
     }else{
       this.goToLogin();
@@ -32,4 +39,6 @@ export class AppComponent {
   goToLogin(){
     this.router.navigateByUrl('login');
   }
+
+  
 }

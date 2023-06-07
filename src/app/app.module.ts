@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import { InjectionToken, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -12,10 +11,14 @@ import { UserListComponent } from './user-list/user-list.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UserCardsComponent } from './user-cards/user-cards.component';
 import { ModalAddUserComponent } from './modal-add-user/modal-add-user.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CloseModalComponent } from './close-modal/close-modal.component';
 import { EditModalComponent } from './edit-modal/edit-modal.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,7 @@ import { AddUserComponent } from './add-user/add-user.component';
     HttpClientModule,
     
   ],
-  providers: [],
+  providers: [], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

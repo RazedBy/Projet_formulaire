@@ -9,8 +9,6 @@ import jwt_decode from 'jwt-decode';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent {
-  url =
-    'http://localhost:8000/api/users/' + Number(sessionStorage.getItem('id'));
   usersList: Array<USERS> = [];
   user: USERS = { id: NaN, email: '', password: '', name: '', description: '' };
   decode: any;
